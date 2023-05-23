@@ -1,4 +1,5 @@
 import { useAuthState } from 'react-firebase-hooks/auth';
+import Chat from './components/Chat';
 import Navbar from './components/Navbar';
 import { auth } from './firebase';
 
@@ -11,9 +12,8 @@ function App() {
 	return (
 		<div className={style.appContainer}>
 			<section className={style.sectionContainer}>
-				{/* Navbar */}
 				<Navbar />
-				{/* Chat component */}
+				{user ? <Chat /> : null}
 			</section>
 		</div>
 	);
